@@ -4,7 +4,7 @@ pipeline {
         maven 'Maven3'
     }
     environment {
-        SONAR_TOKEN = credentials('nanda')
+        SONAR_TOKEN = credentials('Nanda')
     }
     stages {
         stage("Checkout Code") {
@@ -20,7 +20,7 @@ pipeline {
         stage("SonarQube Analysis") {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh "mvn -B sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=${nanda}"
+                    sh "mvn -B sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=${Nanda}"
                 }
             }
         }
