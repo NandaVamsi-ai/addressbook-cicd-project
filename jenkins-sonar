@@ -19,7 +19,7 @@ pipeline {
         }
         stage("SonarQube Analysis") {
             steps {
-                withSonarQubeEnv('SonarQube') {
+                withSonarQubeEnv('Sonarqube') {
                     sh "mvn -B sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=${Nanda}"
                 }
             }
